@@ -1,619 +1,363 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Šimon — my website</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MY WEBSITE FOR PIXL</title>
 
     <style>
-        :root {
-            --bg: #f3f0e9;
-            --text: #171714;
-            --muted: #66645e;
-            --line: #d2cec3;
-            --accent: #e45c2f;
-            --radius: 8px;
-            --content: 1080px;
+
+        h1 {
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 100px;
+            text-align: center;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        img {
+            border-width: 5px;
+            border-style: solid;
+            border-radius: 10px;
+            background-color: rgb(50, 50, 50);
         }
 
-        html {
-            scroll-behavior: smooth;
+        h2 {
+            font-size: 200px;
+            text-align: center;
         }
 
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: "Inter", sans-serif;
-            font-size: 15px;
-            line-height: 1.6;
-            overflow-x: hidden;
+        p {
+            font-size: 50px;
+            text-align: center;
         }
 
-        a {
-            color: inherit;
-        }
-
-        :focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 4px;
-        }
-
-        .wrap {
-            width: min(var(--content), calc(100% - 40px));
-            margin: 0 auto;
-        }
-
-        header {
-            border-bottom: 1px solid var(--line);
-        }
-
-        .nav {
-            min-height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .name {
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 26px;
-        }
-
-        .nav-links a {
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 160ms ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text);
-        }
-
-        .hero {
-            padding: 110px 0 120px;
-            display: grid;
-            grid-template-columns: minmax(0, 1.5fr) minmax(230px, 0.7fr);
-            gap: 80px;
-            align-items: end;
-        }
-
-        .hero h1 {
-            max-width: 780px;
-            font-size: clamp(52px, 8vw, 92px);
-            line-height: 0.98;
-            letter-spacing: -0.07em;
-            font-weight: 700;
-        }
-
-        .hero h1 span {
-            color: var(--accent);
-        }                 
-
-        .intro {
-            max-width: 620px;
-            margin-top: 28px;      
-            color: var(--muted);
-            font-size: 17px;
-            line-height: 1.75;
-        }
-
-        .hero-side {
-            border-left: 1px solid var(--line);
-            padding-left: 24px;
-        }
-
-        .hero-side p {
-            color: var(--muted); 
-            font-size: 13px;
-            margin-bottom: 8px;
-        }
-
-        .hero-side strong {
-            display: block;
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        section {
-            border-top: 1px solid var(--line);
-            padding: 90px 0;
-        }
-
-        .section-head {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 40px;
-            margin-bottom: 55px;
-        }
-
-        .section-number {
-            color: var(--accent);
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .section-head h2 {
-            max-width: 650px;
-            font-size: clamp(30px, 4vw, 48px);
-            line-height: 1.05;
-            letter-spacing: -0.05em;
+        .bigbox {
+            height: 950px;
+            border-width: 50px;
+            border-style: dashed;
         }
 
         .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            background-color: yellow;
+            border-width: 15px;
+            border-style: solid;
+            padding: 30px;
         }
 
-        .about p {
-            max-width: 570px;
-            color: var(--muted);
-            line-height: 1.8;
+        .warning {
+            background-color: black;
+            color: white;
+            border-width: 20px;
+            border-style: solid;
+            padding: 20px;
         }
 
-        .about p + p {
-            margin-top: 20px;
+        .warning p {
+            color: white;
         }
 
-        .facts {
-            border-top: 1px solid var(--line);
+        .gallery {
+            background-color: rgb(255, 150, 150);
+            border-width: 30px;
+            border-style: double;
+            padding: 40px;
         }
 
-        .fact {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 20px;
-            padding: 17px 0;
-            border-bottom: 1px solid var(--line);
+        .ending {
+            background-color: aqua;
+            border-width: 40px;
+            border-style: dotted;
+            padding: 40px;
         }
 
-        .fact-label {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .fact-value {
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .project-list {
-            border-top: 1px solid var(--line);
-        }
-
-        .project {
-            display: grid;
-            grid-template-columns: 80px minmax(0, 1fr) 170px;
-            gap: 25px;
-            align-items: center;
-            min-height: 125px;
-            border-bottom: 1px solid var(--line);
-            text-decoration: none;
-            transition:
-                padding 180ms ease,
-                background-color 180ms ease;
-        }
-
-        .project:hover {
-            padding-left: 12px;
-            background: rgba(228, 92, 47, 0.04);
-        }
-
-        .project:active {
-            padding-left: 6px;
-        }
-
-        .project-number {
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .project-info h3 {
-            font-size: 21px;
-            line-height: 1.2;
-            letter-spacing: -0.025em;
-            margin-bottom: 7px;
-        }
-
-        .project-info p {
-            max-width: 620px;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .project-type {
-            justify-self: end;
-            color: var(--muted);
-            font-size: 12px;
-            text-align: right;
-        }
-
-        .interests {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0;
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .interest {
-            min-height: 180px;
-            padding: 25px 28px 28px 0;
-            border-right: 1px solid var(--line);
-        }
-
-        .interest + .interest {
-            padding-left: 28px;
-        }
-
-        .interest:last-child {
-            border-right: 0;
-        }
-
-        .interest h3 {
-            font-size: 17px;
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-        }
-
-        .interest p {
-            max-width: 280px;
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        footer {
-            border-top: 1px solid var(--line);
-            padding: 24px 0 30px;
-        }
-
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        @media (max-width: 800px) {
-            .hero {
-                grid-template-columns: 1fr;
-                gap: 45px;
-                padding: 80px 0 90px;
-            }
-
-            .hero-side {
-                border-left: 0;
-                border-top: 1px solid var(--line);
-                padding: 20px 0 0;
-            }
-
-            .section-head {
-                grid-template-columns: 1fr;
-                gap: 14px;
-            }
-
-            .about {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .interests {
-                grid-template-columns: 1fr;
-            }
-
-            .interest,
-            .interest + .interest {
-                padding: 24px 0;
-                border-right: 0;
-                border-bottom: 1px solid var(--line);
-            }
-
-            .interest:last-child {
-                border-bottom: 0;
-            }
-
-            .project {
-                grid-template-columns: 45px 1fr;
-                padding: 22px 0;
-                min-height: 0;
-                gap: 12px;
-            }
-
-            .project-type {
-                display: none;
-            }
-
-            .project:hover {
-                padding-left: 5px;
-            }
-
-            .project:active {
-                padding-left: 0;
-            }
-        }
-
-        @media (max-width: 560px) {
-            .wrap {
-                width: min(100% - 28px, var(--content));
-            }
-
-            .nav-links {
-                gap: 5px;
-            }
-
-            .nav-links a {
-                padding: 0 8px;
-                font-size: 13px;
-            }
-
-            .nav-links a:nth-child(3) {
-                display: none;
-            }
-
-            .hero {
-                padding-top: 65px;
-            }
-
-            .hero h1 {
-                font-size: clamp(48px, 16vw, 70px);
-            }
-
-            .intro {
-                font-size: 15px;
-            }
-
-            section {
-                padding: 70px 0;
-            }
-
-            .section-head {
-                margin-bottom: 40px;
-            }
-
-            .section-head h2 {
-                font-size: 34px;
-            }
-
-            .fact {
-                grid-template-columns: 110px 1fr;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                gap: 5px;
-            }
-        }
     </style>
+
 </head>
 
-<body>
 
-<header>
-    <div class="wrap nav">
-        <a class="name" href="#">Šimon</a>
+<body style="background-color: rgb(255, 89, 89);">
 
-        <nav class="nav-links" aria-label="Main navigation">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#interests">Stuff</a>
-        </nav>
+
+    <h1>
+        THIS IS MY CUSTOM WEBSITE I MADE FOR PIXL!!!!
+    </h1>
+
+
+    <b>
+        <p>
+            important: this site is NOT AI GENERATED
+        </p>
+    </b>
+
+
+    <marquee direction="right" scrollamount="100">
+        <img src="https://www.gooose.org/goose1.png" alt="">
+    </marquee>
+
+
+    <marquee direction="right" scrollamount="50">
+        <img src="https://www.gooose.org/goose1.png" alt="">
+    </marquee>
+
+
+    <marquee direction="right" scrollamount="25">
+        <img src="https://www.gooose.org/goose1.png" alt="">
+    </marquee>
+
+
+    <marquee direction="left" scrollamount="25">
+        <img src="https://www.gooose.org/goose1.png" alt="">
+    </marquee>
+
+
+    <h2>
+        as you may see i like geese :)
+    </h2>
+
+
+    <div class="bigbox">
+
+        <h1>
+            I like:
+        </h1>
+
+        <p>geese</p>
+
+        <p>3d modelling</p>
+
+        <p>geese</p>
+
+        <p>parkour/tricking and other sports</p>
+
+        <p>AOT</p>
+
+        <p>making random websites</p>
+
+        <p>coding things that probably don't need to exist</p>
+
     </div>
-</header>
 
-<main>
 
-    <div class="wrap hero">
-        <div>
-            <h1>
-                Hi, I'm<br>
-                <span>Šimon.</span>
-            </h1>
-
-            <p class="intro">
-                I'm 14 and I like making random stuff. Mostly coding,
-                3D printing, electronics and trying to learn things that
-                I probably didnt need to learn.
-            </p>
-        </div>
-
-        <div class="hero-side">
-            <p>Current situation</p>
-            <strong>Working on something. Usually.</strong>
-        </div>
+    <div style="height: 300px;">
     </div>
 
-    <section id="about">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="section-number">01 / About</div>
-                <h2>Basically just some stuff about me.</h2>
-            </div>
 
-            <div class="about">
-                <div>
-                    <p>
-                        Most of my projects start because I see something
-                        and think "could I make that?"
-                    </p>
+    <div class="about">
 
-                    <p>
-                        Then I usually end up opening way too many tabs,
-                        watching tutorials and making something that works
-                        slightly differently than I planned.
-                    </p>
-                </div>
+        <h1>
+            ABOUT ME
+        </h1>
 
-                <div class="facts">
-                    <div class="fact">
-                        <span class="fact-label">Coding</span>
-                        <span class="fact-value">HTML, CSS, JavaScript and random experiments</span>
-                    </div>
+        <p>
+            I make random things on the internet.
+        </p>
 
-                    <div class="fact">
-                        <span class="fact-label">3D printing</span>
-                        <span class="fact-value">Prusa MK4S and some old Ender stuff</span>
-                    </div>
+        <p>
+            Sometimes they are useful.
+        </p>
 
-                    <div class="fact">
-                        <span class="fact-label">CAD</span>
-                        <span class="fact-value">Mostly Fusion 360</span>
-                    </div>
+        <p>
+            Sometimes they are completely pointless.
+        </p>
 
-                    <div class="fact">
-                        <span class="fact-label">Electronics</span>
-                        <span class="fact-value">ESP32s, RP2040s, displays and motors</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <p>
+            Usually there is a goose involved.
+        </p>
 
-    <section id="projects">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="section-number">02 / Projects</div>
-                <h2>Some things I've made.</h2>
-            </div>
-
-            <div class="project-list">
-
-                <a class="project" href="#">
-                    <span class="project-number">01</span>
-
-                    <div class="project-info">
-                        <h3>This website</h3>
-                        <p>
-                            A place for me to put my projects and mess around
-                            with web desing.
-                        </p>
-                    </div>
-
-                    <span class="project-type">WEB</span>
-                </a>
-
-                <a class="project" href="#">
-                    <span class="project-number">02</span>
-
-                    <div class="project-info">
-                        <h3>ROBOCHICKEN</h3>
-                        <p>
-                            A little robotics project with electronics,
-                            motors and a chicken for some reason.
-                        </p>
-                    </div>
-
-                    <span class="project-type">ROBOTICS</span>
-                </a>
-
-                <a class="project" href="#">
-                    <span class="project-number">03</span>
-
-                    <div class="project-info">
-                        <h3>3D printed stuff</h3>
-                        <p>
-                            Random parts, mechanisms and other things I've
-                            designed and then told my printer to make.
-                        </p>
-                    </div>
-
-                    <span class="project-type">3D PRINTING</span>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="interests">
-        <div class="wrap">
-            <div class="section-head">
-                <div class="section-number">03 / Other stuff</div>
-                <h2>Things I do when I'm not making something.</h2>
-            </div>
-
-            <div class="interests">
-
-                <div class="interest">
-                    <h3>Tricking & Parkour</h3>
-                    <p>
-                        Learning tricks, practicing and occasionally landing
-                        something that took way too many attempts.
-                    </p>
-                </div>
-
-                <div class="interest">
-                    <h3>Yoyoing</h3>
-                    <p>
-                        Mostly freestyle stuff and trying to remember combos
-                        after practicing them once.
-                    </p>
-                </div>
-
-                <div class="interest">
-                    <h3>Geese</h3>
-                    <p>
-                        I like geese. This is probaly not very important
-                        information but its on the website now.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <div class="wrap footer-inner">
-        <span>© 2026 Šimon</span>
-        <span>made bt me</span>
     </div>
-</footer>
 
-<script>
-    const links = document.querySelectorAll('a[href^="#"]');
 
-    links.forEach(link => {
-        link.addEventListener("click", event => {
-            const target = document.querySelector(link.getAttribute("href"));
+    <div style="height: 400px;">
+    </div>
 
-            if (!target) return;
 
-            event.preventDefault();
+    <h1>
+        GOOSE GALLERY
+    </h1>
 
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        });
-    });
-</script>
+
+    <div class="gallery">
+
+        <marquee direction="right" scrollamount="15">
+
+            <img style="width: 150px;"
+            src="https://www.gooose.org/goose1.png"
+            alt="">
+
+            <img style="width: 300px;"
+            src="https://www.gooose.org/goose1.png"
+            alt="">
+
+            <img style="width: 200px;"
+            src="https://www.gooose.org/goose1.png"
+            alt="">
+
+            <img style="width: 400px;"
+            src="https://www.gooose.org/goose1.png"
+            alt="">
+
+        </marquee>
+
+    </div>
+
+
+    <div style="height: 500px;">
+    </div>
+
+
+    <div style="border-width: 20px; border-style: solid;">
+
+        <h1>
+            GOOSE COUNTER
+        </h1>
+
+        <h2 style="font-size: 150px;">
+            999999
+        </h2>
+
+        <p>
+            geese have been detected
+        </p>
+
+    </div>
+
+
+    <div style="height: 400px;">
+    </div>
+
+
+    <h1>
+        MY FAVORITE THINGS
+    </h1>
+
+
+    <p>Attack on Titan</p>
+
+    <p>Hollow Knight</p>
+
+    <p>3D printing</p>
+
+    <p>PARKOUR</p>
+
+
+    <marquee direction="right" scrollamount="10">
+
+        GOOSE GOOSE GOOSE GOOSE GOOSE GOOSE GOOSE GOOSE
+
+    </marquee>
+
+
+    <div style="height: 500px;">
+    </div>
+
+
+    <div class="warning">
+
+        <h1>
+            WARNING
+        </h1>
+
+        <p>
+            this website contains geese
+        </p>
+
+        <p>
+            there may be more geese than expected
+        </p>
+
+        <p>
+            some geese may be moving very quickly
+        </p>
+
+        <p>
+            proceed at your own risk
+        </p>
+
+    </div>
+
+
+    <div style="height: 500px;">
+    </div>
+
+
+    <h1>RANDOM GOOSE SECTION</h1>
+
+
+    <marquee direction="left" scrollamount="100">
+
+        <img style="background-color: aqua;"
+        src="https://www.gooose.org/goose1.png"
+        alt="">
+
+    </marquee>
+
+
+    <marquee direction="right" scrollamount="30">
+
+        GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSE
+
+    </marquee>
+
+
+    <div style="height: 600px;">
+    </div>
+
+
+    <div class="ending">
+
+        <h1>THANKS FOR VISITING
+        </h1>
+
+        <p>there will probabyl be more geese here later</p>
+
+    </div>
+
+
+    <div style="height: 500px;">
+    </div>
+
+
+    <marquee direction="right" scrollamount="70">
+
+        <img src="https://www.gooose.org/goose1.png" alt="">
+
+        <img src="https://www.gooose.org/goose1.png" alt="">
+
+        <img src="https://www.gooose.org/goose1.png" alt="">
+
+    </marquee>
+
+
+    <div style="height: 500px;">
+    </div>
+
+
+    <h1>
+        THE END
+    </h1>
+
+
+    <p>
+        or is it
+    </p>
+
+
+    <div style="height: 1000px;">
+    </div>
+
+
+    <h1>
+        OK NOW THE END
+    </h1>
+
 
 </body>
+
 </html>
+
