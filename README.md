@@ -20,6 +20,9 @@ You need:
 
 No additional libraries or frameworks are required to run the website.
 
+## why did I build this?
+ honestly I really like the fact that I can learn something and get nice prizes at the same time so yeah I did it mainly because of the PIXL challenge and hackclub so thank you for that
+ and also I like making websites :)
 
 ## Help
 
